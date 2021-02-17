@@ -2,7 +2,7 @@
   "name": "asyncink",
   "version": "0.0.0",
   "description": "Mikhail T. personal web-site",
-  "author": "",
+  "author": "Mikhail T. <totalism@icloud.com>",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -21,9 +21,13 @@
     "postversion": "git push --follow-tags && echo \"Successfully released version $npm_package_version!\""
   },
   "dependencies": {
+    "dayjs": "^1.10.4",
+    "gray-matter": "^4.0.2",
     "next": "latest",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.25",
@@ -37,6 +41,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "identity-obj-proxy": "^3.0.0",
     "lint-staged": "^10.0.10",
+    "postcss-nested": "^5.0.3",
     "prettier": "^2.0.2",
     "stylelint": "^13.10.0",
     "stylelint-config-prettier": "^8.0.2",
