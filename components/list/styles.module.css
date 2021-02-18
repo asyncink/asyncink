@@ -1,41 +1,47 @@
 .list {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
   max-width: 1024px;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
 }
 
-.list a {
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.list li {
-  box-sizing: border-box;
+.list > li > a {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  line-height: 1.5em;
+  line-height: 28px;
   padding: 15px;
   border-radius: 1px;
 
   &:hover {
-    background: #f1f4f8;
+    background: #f0f3f7;
+    text-decoration: none;
   }
-}
-
-.list time,
-.list aside {
-  width: 142px;
-  color: #858b93;
-  font-size: 16px;
 }
 
 .list main {
   width: 740px;
 }
 
+.list time,
 .list aside {
-  text-align: right;
+  width: 142px;
+  font-size: 14px;
+  color: #858b93;
+}
+
+.list aside {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  & svg {
+    margin-right: 10px;
+    width: 18px;
+  }
+
+  & span {
+    position: relative;
+    bottom: 2px;
+  }
 }

@@ -6,13 +6,14 @@ import html from 'remark-html'
 import slug from 'remark-slug'
 import headings from 'remark-autolink-headings'
 import highlight from 'remark-highlight.js'
+import { PostTag } from 'lib/tags'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
 interface PostMeta {
   title: string
   date: string
-  tag: string
+  tag: PostTag
   description: string
 }
 

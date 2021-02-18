@@ -1,10 +1,10 @@
-name: check
+name: checkup
 
 on:
   push:
 
 jobs:
-  check:
+  checkup:
     name: lint and typecheck
 
     runs-on: ubuntu-latest
