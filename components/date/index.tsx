@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useMemo } from 'react'
 import dayjs from 'dayjs'
 
 interface Props {
@@ -6,7 +6,8 @@ interface Props {
 }
 
 const Date: FC<Props> = ({ dateString }) => {
-  return <time dateTime={dateString}>{dayjs(dateString).format('D MMMM')}</time>
+  const date = useMemo(() => dayjs(dateString).format('D MMMM'), [dateString])
+  return <time dateTime={dateString}>{date}</time>
 }
 
 export default Date

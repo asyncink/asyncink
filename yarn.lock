@@ -4645,6 +4645,14 @@ remark-stringify@^9.0.0:
   dependencies:
     mdast-util-to-markdown "^0.6.0"
 
+remark-unwrap-images@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/remark-unwrap-images/-/remark-unwrap-images-2.0.0.tgz#65134065e3605c64a37d22ab665058fc5286920f"
+  integrity sha512-uehiJU5U1ZNQxTKUlAKOQhVyFsc+9WWvamkuoF3ILdMpASHwA1JbzTOZcRWv+annYfDWuPSuoZAWdt1r0SlrfQ==
+  dependencies:
+    hast-util-whitespace "^1.0.0"
+    unist-util-visit "^2.0.0"
+
 remark@^13.0.0:
   version "13.0.0"
   resolved "https://registry.yarnpkg.com/remark/-/remark-13.0.0.tgz#d15d9bf71a402f40287ebe36067b66d54868e425"

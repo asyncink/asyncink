@@ -6,6 +6,7 @@ import html from 'remark-html'
 import slug from 'remark-slug'
 import headings from 'remark-autolink-headings'
 import highlight from 'remark-highlight.js'
+import unwrapImages from 'remark-unwrap-images'
 import { PostTag } from 'lib/tags'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
@@ -39,7 +40,7 @@ export function getSortedPostItems(): any {
     return {
       id,
       title,
-      date,
+      date: String(date),
       tag,
       description
     }
@@ -66,6 +67,7 @@ export async function getPost(paramsId: string | string[]): Promise<Post> {
     .use(slug)
     .use(headings, { behavior: 'append' })
     .use(highlight, { include: ['js', 'ts', 'html'] })
+    .use(unwrapImages)
     .use(html)
     .process(content)
   const contentHtml = processedContent.toString()
@@ -74,7 +76,7 @@ export async function getPost(paramsId: string | string[]): Promise<Post> {
     id,
     title,
     contentHtml,
-    date,
+    date: String(date),
     tag,
     description
   }
