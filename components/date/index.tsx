@@ -6,11 +6,7 @@ interface Props {
 }
 
 const Date: FC<Props> = ({ dateString }) => {
-  return (
-    <time dateTime={dateString}>
-      {dayjs('2019-01-25').format('MMMM D, YYYY')}
-    </time>
-  )
+  return <time dateTime={dateString}>{dayjs(dateString).format('D MMMM')}</time>
 }
 
 export default Date

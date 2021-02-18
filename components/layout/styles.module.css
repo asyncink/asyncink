@@ -1,36 +1,53 @@
-.container {
-  max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
+.layout {
+  margin: 50px auto 100px;
 }
 
-.container header {
+.layout header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
-.container header h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
-  margin: 1rem 0;
+.layout header h1,
+.layout header h2 {
   text-align: center;
 }
 
-.container header h2 {
-  font-size: 2rem;
-  line-height: 1.3;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
-  margin: 1rem 0;
-  text-align: center;
+.layout header h1 {
+  min-height: 200px;
 }
 
-.container header h3 {
-  font-size: 1.5rem;
-  line-height: 1.4;
-  margin: 1rem 0;
-  text-align: center;
+.layout article {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.layout article :global(.youtube) {
+  width: 100%;
+  margin: 24px 0;
+
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.layout article :global(.youtube) iframe,
+.layout article :global(.youtube) embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+.layout article p {
+  margin-top: 0;
+}
+
+.layout article p {
+  margin-top: 0;
 }

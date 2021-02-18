@@ -1,33 +1,31 @@
 import React, { FC } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Link from 'next/link'
+import Link from 'components/link'
+import Typography from 'components/typography'
 import styles from './styles.module.css'
 
-export const title = 'Mikhail T. is typing...'
-export const description =
-  'Блог о разработке, дизайне, чтении и управлении продуктом'
+export const LOGO = 'Mikhail T. is typing...'
 
 interface Props {
-  home?: boolean
+  title: string
 }
 
-const Layout: FC<Props> = ({ children, home }) => {
+const Layout: FC<Props> = ({ children, title }) => {
+  const { pathname } = useRouter()
+
   return (
-    <div className={styles.container}>
+    <div className={styles.layout}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <title>{title}</title>
+        <meta name="description" content={title} />
       </Head>
       <header>
-        {home ? (
-          <>
-            <h3>{title}</h3>
-            <h2>{description}</h2>
-          </>
-        ) : (
-          <h3>
-            <Link href="/">{title}</Link>
-          </h3>
-        )}
+        <Typography.H2>
+          {pathname === '/' ? LOGO : <Link href="/">{LOGO}</Link>}
+        </Typography.H2>
+        <Typography.H1>{title}</Typography.H1>
       </header>
       <main>{children}</main>
     </div>

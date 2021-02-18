@@ -1,42 +1,33 @@
 import React, { FC } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Layout from 'components/layout'
-import { getAllPostIds, getPostData } from 'lib/posts'
+import { Post, getAllPostIds, getPost } from 'lib/posts'
 import Head from 'next/head'
 import Date from 'components/date'
-import utilStyles from 'styles/utils.module.css'
 
 interface Props {
-  postData: {
-    title: string
-    date: string
-    contentHtml: string
-  }
+  post: Post
 }
 
-const Post: FC<Props> = ({ postData }) => {
+const PostPage: FC<Props> = ({ post: { title, date, contentHtml } }) => {
   return (
-    <Layout>
+    <Layout title={title}>
       <Head>
-        <title>{postData.title}</title>
+        <title>{title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl} style={{ textAlign: 'center' }}>
-          {postData.title}
-        </h1>
-        <div className={utilStyles.lightText} style={{ textAlign: 'center' }}>
-          <Date dateString={postData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        <Date dateString={date} />
       </article>
     </Layout>
   )
 }
 
-export default Post
+export default PostPage
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
+  const ids = getAllPostIds()
+  const paths = ids.map(id => ({ params: { id } }))
   return {
     paths,
     fallback: false
@@ -44,10 +35,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id)
+  const post = await getPost(params.id)
   return {
     props: {
-      postData
+      post
     }
   }
 }

@@ -1,0 +1,43 @@
+.list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 904px;
+}
+
+.list a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.list li {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1.5em;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 1px;
+
+  &:hover {
+    background: #f1f4f8;
+  }
+}
+
+.list time,
+.list aside {
+  width: 132px;
+  color: #858b93;
+  /* color: #000; */
+  font-size: 13px;
+}
+
+.list main {
+  width: 640px;
+}
+
+.list aside {
+  text-align: right;
+}
