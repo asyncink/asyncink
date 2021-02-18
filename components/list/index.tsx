@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
+import { PostItem } from 'lib/posts'
 import Date from 'components/date'
 import Link from 'components/link'
-import { PostItem } from 'lib/posts'
+import { PostIcons, PostTags } from 'lib/tags'
 import styles from './styles.module.css'
 
 interface Props {
@@ -12,15 +13,16 @@ const List: FC<Props> = ({ items }) => {
   return (
     <ol className={styles.list}>
       {items.map(({ id, title, date, tag }) => (
-        <Link key={id} href={`/posts/${id}`}>
-          <li>
+        <li key={id}>
+          <Link href={`/posts/${id}`}>
             <Date dateString={date} />
-
             <main>{title}</main>
-
-            <aside className={styles.right}>{tag}</aside>
-          </li>
-        </Link>
+            <aside>
+              {PostIcons[tag]}
+              <span>{PostTags[tag]}</span>
+            </aside>
+          </Link>
+        </li>
       ))}
     </ol>
   )
