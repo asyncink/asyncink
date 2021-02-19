@@ -1,3 +1,6 @@
+@custom-media --tablet screen and (width >= 768px);
+@custom-media --desktop screen and (width >= 1200px);
+
 :root {
   --linkBackground: #f0f3f7;
   --codeColor: #ff4215;

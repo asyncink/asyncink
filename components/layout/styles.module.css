@@ -1,5 +1,12 @@
 .layout {
-  margin: 50px auto 100px;
+  min-width: 320px;
+  margin: 25px auto 50px;
+  padding: 0 20px;
+
+  @media (--tablet) {
+    margin: 50px auto 100px;
+    padding: 0;
+  }
 }
 
 .layout > header {
@@ -10,16 +17,15 @@
   margin: 0 auto;
 
   & h1 {
-    min-height: 200px;
+    min-height: 150px;
+
+    @media (--tablet) {
+      min-height: 200px;
+    }
   }
 
   & h2 a {
     padding: 7px 10px;
     border-radius: 3px;
-  }
-
-  & h2 a:hover {
-    background-color: var(--linkBackground);
-    text-decoration: none;
   }
 }
