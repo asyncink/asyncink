@@ -14,7 +14,7 @@ const List: FC<Props> = ({ items }) => {
     <ol className={styles.list}>
       {items.map(({ id, title, date, tag }) => (
         <li key={id}>
-          <Link href={`/posts/${id}`}>
+          <Link href={`/${id}`}>
             <Date dateString={date} />
             <main>{title}</main>
             <aside>
