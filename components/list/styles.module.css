@@ -14,7 +14,7 @@
   border-radius: 1px;
 
   &:hover {
-    background: #f0f3f7;
+    background-color: var(--linkBackground);
     text-decoration: none;
   }
 }
@@ -27,7 +27,7 @@
 .list aside {
   width: 142px;
   font-size: 14px;
-  color: #858b93;
+  color: var(--secondaryColor);
 }
 
 .list time {

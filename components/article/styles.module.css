@@ -25,7 +25,7 @@
   }
 
   & a:hover {
-    background: #f0f3f7;
+    background-color: var(--linkBackground);
     text-decoration: none;
   }
 
@@ -45,8 +45,8 @@
     white-space: nowrap;
     padding: 2px 8px;
     margin: 0 1px;
-    background: #f1f4f8;
-    color: #ff4215;
+    background-color: var(--linkBackground);
+    color: var(--codeColor);
     text-shadow: none;
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 0.35rem;
@@ -125,7 +125,7 @@
     width: 142px;
     font-size: 14px;
     line-height: 28px;
-    color: #858b93;
+    color: var(--secondaryColor);
   }
 
   & aside {
