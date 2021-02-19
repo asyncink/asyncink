@@ -6,12 +6,10 @@ interface Props {
   className?: string
 }
 
-const Link: FC<Props> = ({ children, href, ...props }) => {
-  return (
-    <LinkNext href={href}>
-      <a {...props}>{children}</a>
-    </LinkNext>
-  )
-}
+const Link: FC<Props> = ({ children, href, ...props }) => (
+  <LinkNext href={href}>
+    <a {...props}>{children}</a>
+  </LinkNext>
+)
 
 export default Link

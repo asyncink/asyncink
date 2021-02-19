@@ -1,8 +1,8 @@
 ---
-title: 'Из чего состоит JavaScript'
-date: '2020-05-10'
-tag: 'dev'
-description: 'Перевод поста «What Is JavaScript Made Of?» Дэна Абрамова. В статье рассмотрены все основные понятия, на которых строится современный JavaScript.'
+title: Ментальная модель современного JavaScript от Дэна Абрамова
+date: 2020-05-10
+tag: dev
+description: Перевод поста «What Is JavaScript Made Of?» Дэна Абрамова. В статье рассмотрены все основные понятия, на которых строится современный JavaScript.
 ---
 
 Перевод поста [«What Is JavaScript Made Of?»](https://overreacted.io/what-is-javascript-made-of/) Дэна Абрамова — разработчика React и активного участника open-source сообщества.

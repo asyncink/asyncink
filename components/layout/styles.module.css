@@ -2,47 +2,24 @@
   margin: 50px auto 100px;
 }
 
-.layout header {
+.layout > header {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 640px;
   margin: 0 auto;
-}
 
-.layout header h1,
-.layout header h2 {
-  text-align: center;
-}
+  & h1 {
+    min-height: 200px;
+  }
 
-.layout header h1 {
-  min-height: 200px;
-}
+  & h2 a {
+    padding: 7px 10px;
+    border-radius: 3px;
+  }
 
-.layout article {
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.layout article :global(.youtube) {
-  width: 100%;
-  margin: 24px 0;
-  position: relative;
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 56.25%;
-}
-
-.layout article :global(.youtube) iframe,
-.layout article :global(.youtube) embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-}
-
-.layout article p {
-  margin-top: 0;
+  & h2 a:hover {
+    background: #f0f3f7;
+    text-decoration: none;
+  }
 }
