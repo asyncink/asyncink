@@ -2,7 +2,9 @@
 @custom-media --desktop screen and (width >= 1200px);
 
 :root {
+  --linkColor: #007cf0;
   --linkBackground: #f0f3f7;
   --codeColor: #ff4215;
   --secondaryColor: #858b93;
+  --logoGradient: linear-gradient(90deg, #007cf0, #00dfd8);
 }

@@ -1,10 +1,12 @@
 import React, { FC } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
+
+import { getPostIds, getPost } from 'lib/posts'
+
+import Head from 'next/head'
 import Layout from 'components/layout'
 import Article from 'components/article'
-import { Post, getPostIds, getPost } from 'lib/posts'
-import { PostIcons, PostTags } from 'lib/tags'
-import Head from 'next/head'
+import Tag from 'components/tag'
 import Date from 'components/date'
 
 interface Props {
@@ -20,11 +22,8 @@ const PostPage: FC<Props> = ({ post: { title, date, tag, contentHtml } }) => {
       <Article>
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         <header>
-          <Date dateString={date} />
-          <aside>
-            {PostIcons[tag]}
-            <span>{PostTags[tag]}</span>
-          </aside>
+          <Date value={date} />
+          <Tag value={tag} />
         </header>
       </Article>
     </Layout>

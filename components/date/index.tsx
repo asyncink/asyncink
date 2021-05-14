@@ -1,13 +1,20 @@
 import React, { FC, useMemo } from 'react'
+import cn from 'classnames'
 import dayjs from 'dayjs'
+import styles from './styles.module.css'
 
 interface Props {
-  dateString: string
+  value: string
+  className?: string
 }
 
-const Date: FC<Props> = ({ dateString }) => {
-  const date = useMemo(() => dayjs(dateString).format('D MMMM'), [dateString])
-  return <time dateTime={dateString}>{date}</time>
+const Date: FC<Props> = ({ value, className }) => {
+  const date = useMemo(() => dayjs(value).format('D MMMM'), [value])
+  return (
+    <time className={cn(styles.date, className)} dateTime={value}>
+      {date}
+    </time>
+  )
 }
 
 export default Date

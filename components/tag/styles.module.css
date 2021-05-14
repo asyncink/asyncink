@@ -1,0 +1,22 @@
+.tag {
+  width: 120px;
+  min-width: 120px;
+  font-size: 14px;
+  line-height: 28px;
+  color: var(--secondaryColor);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  & svg {
+    margin-right: 10px;
+    width: 18px;
+  }
+
+  & span {
+    @media (--tablet) {
+      position: relative;
+      bottom: 1px;
+    }
+  }
+}

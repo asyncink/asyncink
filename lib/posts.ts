@@ -7,25 +7,8 @@ import slug from 'remark-slug'
 import headings from 'remark-autolink-headings'
 import highlight from 'remark-highlight.js'
 import unwrapImages from 'remark-unwrap-images'
-import { PostTag } from 'lib/tags'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
-
-interface PostMeta {
-  title: string
-  date: string
-  tag: PostTag
-  description: string
-  published: boolean
-}
-
-export interface PostItem extends PostMeta {
-  id: string
-}
-
-export interface Post extends PostItem {
-  contentHtml: string
-}
 
 export function getPostIds(): string[] {
   const fileNames = fs.readdirSync(postsDirectory)

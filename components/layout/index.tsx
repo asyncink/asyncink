@@ -5,7 +5,7 @@ import Link from 'components/link'
 import Typography from 'components/typography'
 import styles from './styles.module.css'
 
-export const LOGO = 'Mikhail T. is typing...'
+const LOGO = 'Mikhail T. is typing...'
 
 interface Props {
   title: string
