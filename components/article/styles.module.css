@@ -146,28 +146,4 @@
   @media (--tablet) {
     margin-top: 100px;
   }
-
-  & time,
-  & aside {
-    width: 142px;
-    font-size: 14px;
-    line-height: 28px;
-    color: var(--secondaryColor);
-  }
-
-  & aside {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  & aside svg {
-    margin-right: 10px;
-    width: 18px;
-  }
-
-  & aside span {
-    position: relative;
-    bottom: 2px;
-  }
 }

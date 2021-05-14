@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { PostItem } from 'lib/posts'
 import Date from 'components/date'
 import Link from 'components/link'
-import { PostIcons, PostTags } from 'lib/tags'
+import Tag from 'components/tag'
 import styles from './styles.module.css'
 
 interface Props {
@@ -15,12 +15,9 @@ const List: FC<Props> = ({ items }) => {
       {items.map(({ id, title, date, tag }) => (
         <li key={id}>
           <Link href={`/${id}`}>
-            <Date dateString={date} />
+            <Date value={date} className={styles.date} />
             <main>{title}</main>
-            <aside>
-              {PostIcons[tag]}
-              <span>{PostTags[tag]}</span>
-            </aside>
+            <Tag value={tag} className={styles.tag} />
           </Link>
         </li>
       ))}
