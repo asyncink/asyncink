@@ -1,44 +1,71 @@
 .list {
-  width: 1024px;
   padding: 0;
   margin: 0 auto;
   list-style: none;
+
+  @media (--tablet) {
+    width: 748px;
+  }
+  @media (--desktop) {
+    width: 1024px;
+  }
 }
 
 .list > li > a {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
+  flex-wrap: wrap;
   line-height: 28px;
   padding: 15px 0;
   border-radius: 1px;
 
-  &:hover {
-    background: #f0f3f7;
-    text-decoration: none;
+  @media (--tablet) {
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 15px;
   }
 }
 
 .list main {
-  width: 740px;
+  order: 1;
+  width: 100%;
+  margin-bottom: 7px;
+
+  @media (--tablet) {
+    order: initial;
+    width: auto;
+    margin-bottom: 0;
+    flex-grow: 1;
+  }
 }
 
 .list time,
 .list aside {
-  width: 142px;
+  width: 120px;
+  min-width: 120px;
   font-size: 14px;
-  color: #858b93;
+  color: var(--secondaryColor);
 }
 
 .list time {
-  padding-left: 15px;
+  order: 3;
+
+  @media (--tablet) {
+    order: initial;
+  }
 }
 
 .list aside {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  padding-right: 15px;
+  order: 2;
+
+  @media (--tablet) {
+    order: initial;
+    justify-content: flex-end;
+  }
 
   & svg {
     margin-right: 10px;
@@ -46,7 +73,9 @@
   }
 
   & span {
-    position: relative;
-    bottom: 2px;
+    @media (--tablet) {
+      position: relative;
+      bottom: 2px;
+    }
   }
 }

@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import { AppProps } from 'next/app'
 
 import 'styles/global.css'
+import 'styles/variables.css'
 
 import dayjs from 'dayjs'
 import 'dayjs/locale/ru'
