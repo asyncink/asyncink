@@ -1,7 +1,9 @@
 import React, { FC } from 'react'
 import { GetStaticProps } from 'next'
+
+import { getPostItems } from 'lib/posts'
+
 import Layout from 'components/layout'
-import { PostItem, getPostItems } from 'lib/posts'
 import List from 'components/list'
 
 interface Props {

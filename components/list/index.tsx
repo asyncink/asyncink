@@ -1,8 +1,9 @@
 import React, { FC } from 'react'
-import { PostItem } from 'lib/posts'
+
 import Date from 'components/date'
 import Link from 'components/link'
 import Tag from 'components/tag'
+
 import styles from './styles.module.css'
 
 interface Props {

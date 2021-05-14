@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react'
 import cn from 'classnames'
-import { PostTag, PostIcons, PostTags } from 'lib/tags'
+import { PostTag, TagIcons, TagNames } from 'lib/tags'
 import styles from './styles.module.css'
 
 interface Props {
@@ -9,8 +9,8 @@ interface Props {
 }
 
 const Tag: FC<Props> = ({ value, className }) => {
-  const icon = useMemo(() => PostIcons[value], [value])
-  const name = useMemo(() => PostTags[value], [value])
+  const icon = useMemo(() => TagIcons[value], [value])
+  const name = useMemo(() => TagNames[value], [value])
   return (
     <div className={cn(styles.tag, className)}>
       {icon}

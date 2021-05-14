@@ -12,14 +12,14 @@ export enum PostTag {
   VIDEO = 'video'
 }
 
-export const PostIcons = {
+export const TagIcons: Record<PostTag, React.ReactNode> = {
   [PostTag.DEV]: <TerminalIcon />,
   [PostTag.NOTE]: <NoteIcon />,
   [PostTag.READ]: <BooksIcon />,
   [PostTag.VIDEO]: <VideoIcon />
 }
 
-export const PostTags = {
+export const TagNames: Record<PostTag, string> = {
   [PostTag.DEV]: 'разработка',
   [PostTag.NOTE]: 'заметки',
   [PostTag.READ]: 'лонгриды',

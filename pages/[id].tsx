@@ -1,10 +1,12 @@
 import React, { FC } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
+
+import { getPostIds, getPost } from 'lib/posts'
+
+import Head from 'next/head'
 import Layout from 'components/layout'
 import Article from 'components/article'
 import Tag from 'components/tag'
-import { Post, getPostIds, getPost } from 'lib/posts'
-import Head from 'next/head'
 import Date from 'components/date'
 
 interface Props {
