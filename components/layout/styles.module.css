@@ -45,23 +45,4 @@
       padding: 7px 10px;
     }
   }
-
-  @media (--tablet) {
-    & h2 a::after {
-      content: '';
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background-color: var(--linkBackground);
-      border-radius: 3px;
-      opacity: 0;
-    }
-
-    & h2 a:hover::after {
-      opacity: 1;
-    }
-  }
 }
