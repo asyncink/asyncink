@@ -65,7 +65,7 @@ export async function getPost(paramsId: string | string[]): Promise<Post> {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   const { data, content } = matter(fileContents)
-  const { title, date, tag, description } = data
+  const { title, date, tag, description, published } = data
 
   const processedContent = await remark()
     .use(slug)
@@ -82,6 +82,7 @@ export async function getPost(paramsId: string | string[]): Promise<Post> {
     contentHtml,
     date: String(date),
     tag,
-    description
+    description,
+    published
   }
 }
