@@ -16,6 +16,7 @@ interface PostMeta {
   date: string
   tag: PostTag
   description: string
+  published: boolean
 }
 
 export interface PostItem extends PostMeta {
@@ -26,7 +27,12 @@ export interface Post extends PostItem {
   contentHtml: string
 }
 
-export function getSortedPostItems(): any {
+export function getPostIds(): string[] {
+  const fileNames = fs.readdirSync(postsDirectory)
+  return fileNames.map(fileName => fileName.replace(/\.md$/, ''))
+}
+
+export function getPostItems(): any {
   const fileNames = fs.readdirSync(postsDirectory)
   const postItems: PostItem[] = fileNames.map(fileName => {
     const id = fileName.replace(/\.md$/, '')
@@ -35,23 +41,21 @@ export function getSortedPostItems(): any {
     const fileContents = fs.readFileSync(fullPath, 'utf8')
 
     const { data } = matter(fileContents)
-    const { title, date, tag, description } = data
+    const { title, date, tag, description, published } = data
 
     return {
       id,
       title,
       date: String(date),
       tag,
-      description
+      description,
+      published
     }
   })
 
-  return postItems.sort((a, b) => +new Date(b.date) - +new Date(a.date))
-}
-
-export function getAllPostIds(): string[] {
-  const fileNames = fs.readdirSync(postsDirectory)
-  return fileNames.map(fileName => fileName.replace(/\.md$/, ''))
+  return postItems
+    .filter(({ published }) => published)
+    .sort((a, b) => +new Date(b.date) - +new Date(a.date))
 }
 
 export async function getPost(paramsId: string | string[]): Promise<Post> {
@@ -61,7 +65,7 @@ export async function getPost(paramsId: string | string[]): Promise<Post> {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   const { data, content } = matter(fileContents)
-  const { title, date, tag, description } = data
+  const { title, date, tag, description, published } = data
 
   const processedContent = await remark()
     .use(slug)
@@ -78,6 +82,7 @@ export async function getPost(paramsId: string | string[]): Promise<Post> {
     contentHtml,
     date: String(date),
     tag,
-    description
+    description,
+    published
   }
 }

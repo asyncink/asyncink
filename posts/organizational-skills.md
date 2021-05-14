@@ -3,6 +3,7 @@ title: Организационные навыки в программирова
 date: 2020-02-17
 tag: dev
 description: В программировании первостепенны организационные навыки, умение проектировать и способность управлять постоянно возрастающей сложностью информационных систем.
+published: true
 ---
 
 Перевод поста [«Organizational Skills Beat Algorithmic Wizardry»](https://prog21.dadgum.com/177.html) от James Hague.
