@@ -13,12 +13,14 @@ body {
 }
 
 a {
-  color: #007cf0;
+  color: var(--linkColor);
   text-decoration: none;
+  transition: background-color ease-in-out 0.05s;
 }
 
-@media (--tablet) {
-  a:hover {
+a:hover {
+  @media (--tablet) {
+    border-radius: 2px;
     background-color: var(--linkBackground);
   }
 }
