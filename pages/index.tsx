@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { GetStaticProps } from 'next'
 import Layout from 'components/layout'
-import { PostItem, getSortedPostItems } from 'lib/posts'
+import { PostItem, getPostItems } from 'lib/posts'
 import List from 'components/list'
 
 interface Props {
@@ -17,7 +17,7 @@ export const Home: FC<Props> = ({ postItems }): JSX.Element => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const postItems = getSortedPostItems()
+  const postItems = getPostItems()
   return {
     props: {
       postItems
