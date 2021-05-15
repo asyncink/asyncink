@@ -104,14 +104,6 @@
     top: 50%;
     transform: translate3d(-50%, -50%, 0);
     background-size: cover;
-
-    /* width: 12px;
-    height: 24px;
-    background-image: url('/icons/pause-2.svg'); */
-
-    /* width: 30px;
-    height: 24px;
-    background-image: url('/icons/pause.svg'); */
     width: 21px;
     height: 24px;
     background-image: url('/icons/paragraph.svg');
