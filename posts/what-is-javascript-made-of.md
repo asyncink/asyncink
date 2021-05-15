@@ -1,6 +1,6 @@
 ---
 title: Ментальная модель современного JavaScript от Дэна Абрамова
-date: 2020-05-10
+date: 2020-10-10
 tag: dev
 description: Перевод поста «What Is JavaScript Made Of?» Дэна Абрамова. В статье рассмотрены все основные понятия, на которых строится современный JavaScript.
 published: true
