@@ -17,7 +17,7 @@
     "format": "prettier --write . && eslint . --ext ts --ext tsx --ext js --fix",
     "typecheck": "tsc --pretty --noEmit",
     "precommit": "lint-staged",
-    "preversion": "echo \"Running tests for version $npm_package_version...\" && yarn test",
+    "preversion": "echo \"Linting and type checking version $npm_package_version...\" && yarn checkup",
     "postversion": "git push --follow-tags && echo \"Successfully released version $npm_package_version!\""
   },
   "dependencies": {
