@@ -6,7 +6,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/totalism/asyncink.git"
+    "url": "git+https://github.com/asyncink/asyncink.git"
   },
   "scripts": {
     "start": "next dev",
