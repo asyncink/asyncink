@@ -15,16 +15,16 @@ body {
 a {
   color: var(--linkColor);
   text-decoration: none;
-}
 
-@media (--tablet) {
-  a {
+  @media (--tablet) {
     display: inline-block;
     line-height: 21px;
     position: relative;
   }
+}
 
-  a::after {
+a::after {
+  @media (--tablet) {
     content: '';
     z-index: -1;
     width: calc(100% + 2px);
@@ -36,8 +36,10 @@ a {
     border-radius: 3px;
     opacity: 0;
   }
+}
 
-  a:hover::after {
+a:hover::after {
+  @media (--tablet) {
     opacity: 1;
   }
 }
