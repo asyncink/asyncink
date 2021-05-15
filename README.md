@@ -28,5 +28,5 @@
 ### Gitflow
 
 - branch `main` — current production source code
-- branch `develop` — for new features and bug fixes
-- branch `publish` — for work in progress posts and drafts
+- branch `develop` — new features and bug fixes
+- branch `publish` — work in progress posts and drafts
