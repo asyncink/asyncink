@@ -1,6 +1,6 @@
 ---
 title: Серия научно-популярных публикаций на пальцах™ от Артема sly2m Прохорова
-date: 2021-02-20
+date: 2021-05-15
 tag: read
 description:
 published: true
