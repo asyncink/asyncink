@@ -38,6 +38,11 @@ const Layout: FC<Props> = ({ children, title }) => {
           href="/favicon/apple-touch-icon.png"
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
+        <script
+          async
+          defer
+          data-domain="asyncink.com"
+          src="https://stats.asyncink.com/js/plausible.outbound-links.js"></script>
       </Head>
       <header>
         <Typography.H2>
