@@ -13,7 +13,7 @@
 
 - `start`: start app locally with `next dev`
 - `build`: compile production build with `next build`
-- `start:produ`: start production build locally with `next start`
+- `start:prod`: start production build locally with `next start`
 - `lint`: lint code with ESLint and stylelint
 - `format`: fix code style with prettier and eslint
 - `typecheck`: run static type checking with TypeScript
