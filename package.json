@@ -55,6 +55,7 @@
     "remark-html": "^15.0.1",
     "remark-slug": "^7.0.1",
     "remark-unwrap-images": "^3.0.1",
+    "standard-version": "^9.3.2",
     "stylelint": "^14.5.3",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
