@@ -50,7 +50,10 @@ const Layout: FC<Props> = ({ children, title }) => {
       <main>{children}</main>
 
       <footer>
-        <a href="https://t.me/asyncink">
+        <a
+          href="https://t.me/asyncink"
+          target="_blank"
+          rel="nofollow noreferrer">
           <TelegramIcon />
         </a>
       </footer>

@@ -6,7 +6,11 @@ description: Перевод поста «What Is JavaScript Made Of?» Дэна 
 published: true
 ---
 
-Перевод поста [«What Is JavaScript Made Of?»](https://overreacted.io/what-is-javascript-made-of/) Дэна Абрамова — разработчика React и активного участника open-source сообщества.
+Обновлено 26 февраля 2022: с момент написания оригинального поста Дэн Абрамов запустил обучающий проект [Just JavaScript](https://justjavascript.com/) с иллюстрациями от [Maggie Appleton](https://maggieappleton.com/).
+
+---
+
+Перевод поста [«What Is JavaScript Made Of?»](https://overreacted.io/what-is-javascript-made-of/) Дэна Абрамова, разработчика React и активного участника open-source сообщества.
 
 В статье рассмотрены все основные понятия, на которых строится современный JavaScript — значения, типы, равенство, литералы, переменные, объекты, массивы и функции. Кратко и доступно объяснены такие понятия, как хоистинг переменных, мутабельность, прототипы, стек вызовов, функции высшего порядка, коллбеки и замыкания.
 

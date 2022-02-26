@@ -1,8 +1,8 @@
 ---
 title: Серия интервью «How to Get Rich» Наваля Равиканта
-date: 2021-08-27
+date: 2022-02-26
 tag: read
-description: Перевод серии интервью «How to Get Rich» Наваля Равиканта
+description: Перевод цикла диалогов «How to Get Rich» Наваля Равиканта и Ниви
 published: true
 ---
 
