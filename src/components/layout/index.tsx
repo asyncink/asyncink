@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useCallback } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'components/link'
@@ -14,6 +14,11 @@ interface Props {
 
 const Layout: FC<Props> = ({ children, title }) => {
   const { pathname } = useRouter()
+
+  const handleTelegramClick = useCallback(
+    () => window.yaCounter87645946.reachGoal('telegram-click'),
+    []
+  )
 
   return (
     <div className={styles.layout}>
@@ -52,6 +57,7 @@ const Layout: FC<Props> = ({ children, title }) => {
       <footer>
         <a
           href="https://t.me/asyncink"
+          onClick={handleTelegramClick}
           target="_blank"
           rel="nofollow noreferrer">
           <TelegramIcon />
