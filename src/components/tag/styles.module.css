@@ -3,7 +3,7 @@
   min-width: 120px;
   font-size: 14px;
   line-height: 28px;
-  color: var(--secondaryColor);
+  color: var(--secondary-color);
   display: flex;
   justify-content: flex-end;
   align-items: center;

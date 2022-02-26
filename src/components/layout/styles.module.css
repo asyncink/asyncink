@@ -1,10 +1,10 @@
 .layout {
   min-width: 320px;
-  margin: 25px auto 50px;
+  margin: 25px auto 20px;
   padding: 0 20px;
 
   @media (--tablet) {
-    margin: 50px auto 100px;
+    margin: 50px auto 30px;
     padding: 0;
   }
 }
@@ -30,19 +30,43 @@
   }
 
   & h2 {
-    background-image: var(--logoGradient);
+    background-image: var(--logo-gradient);
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   & h2 a {
     position: relative;
-    background-image: var(--logoGradient);
+    background-image: var(--logo-gradient);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
     @media (--tablet) {
       padding: 7px 10px;
     }
+  }
+}
+
+.layout > footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+
+  @media (--tablet) {
+    margin-top: 100px;
+  }
+
+  & > a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & svg {
+    height: 30px;
+    width: 30px;
   }
 }

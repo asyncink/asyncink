@@ -60,10 +60,10 @@
   & code {
     padding: 2px 8px;
     margin: 0 1px;
-    background-color: var(--linkBackground);
-    color: var(--codeColor);
+    background-color: var(--link-background);
+    color: var(--code-color);
     text-shadow: none;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgb(0 0 0 / 0.05);
     border-radius: 0.35rem;
 
     @media (--tablet) {
@@ -133,9 +133,9 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 60px;
+  margin-top: 20px;
 
   @media (--tablet) {
-    margin-top: 100px;
+    margin-top: 40px;
   }
 }

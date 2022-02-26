@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   font-size: 18px;
 }
@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: var(--linkColor);
+  color: var(--link-color);
   text-decoration: none;
 
   @media (--tablet) {
@@ -32,7 +32,7 @@ a::after {
     position: absolute;
     left: -1px;
     top: -2px;
-    background-color: var(--linkBackground);
+    background-color: var(--link-background);
     border-radius: 3px;
     opacity: 0;
   }

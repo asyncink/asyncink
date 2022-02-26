@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'components/link'
 import Typography from 'components/typography'
+import TelegramIcon from 'components/icons/telegram.svg'
 import styles from './styles.module.css'
 
 const LOGO = 'Mikhail T. is typing...'
@@ -45,7 +46,14 @@ const Layout: FC<Props> = ({ children, title }) => {
         </Typography.H2>
         <Typography.H1>{title}</Typography.H1>
       </header>
+
       <main>{children}</main>
+
+      <footer>
+        <a href="https://t.me/asyncink">
+          <TelegramIcon />
+        </a>
+      </footer>
     </div>
   )
 }

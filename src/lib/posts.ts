@@ -1,10 +1,9 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import remark from 'remark'
+import { remark } from 'remark'
 import html from 'remark-html'
 import slug from 'remark-slug'
-import headings from 'remark-autolink-headings'
 import highlight from 'remark-highlight.js'
 import unwrapImages from 'remark-unwrap-images'
 
@@ -52,7 +51,6 @@ export async function getPost(paramsId: string | string[]): Promise<Post> {
 
   const processedContent = await remark()
     .use(slug)
-    .use(headings, { behavior: 'append' })
     .use(highlight, { include: ['js', 'ts', 'html'] })
     .use(unwrapImages)
     .use(html)
