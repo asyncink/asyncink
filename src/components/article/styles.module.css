@@ -78,10 +78,40 @@
   & ul,
   & ol {
     margin: 25px 0;
+  }
+
+  & ul {
+    list-style-type: '–';
+    padding-left: 20px !important;
+
+    @media (--tablet) {
+      padding-left: 80px !important;
+    }
+
+    @media (--desktop) {
+      padding-left: 110px !important;
+    }
+
+    & > li {
+      &::marker {
+        font-weight: 500;
+      }
+
+      & + li {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  & ol {
     padding-left: 30px !important;
 
     @media (--tablet) {
       padding-left: 90px !important;
+    }
+
+    @media (--desktop) {
+      padding-left: 120px !important;
     }
   }
 
