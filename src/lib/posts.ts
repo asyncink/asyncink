@@ -53,7 +53,7 @@ export async function getPost(paramsId: string | string[]): Promise<Post> {
     .use(slug)
     .use(highlight, { include: ['js', 'ts', 'html'] })
     .use(unwrapImages)
-    .use(html)
+    .use(html, { sanitize: false })
     .process(content)
   const contentHtml = processedContent.toString()
 
