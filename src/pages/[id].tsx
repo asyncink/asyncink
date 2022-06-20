@@ -35,6 +35,7 @@ export default PostPage
 export const getStaticPaths: GetStaticPaths = async () => {
   const ids = getPostIds()
   const paths = ids.map(id => ({ params: { id } }))
+
   return {
     paths,
     fallback: false
@@ -43,6 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await getPost(params.id)
+
   return {
     props: {
       post
