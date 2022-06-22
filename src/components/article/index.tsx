@@ -1,8 +1,6 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styles from './styles.module.css'
 
-const Article: FC = ({ children }) => (
+export const Article: React.FC = ({ children }) => (
   <article className={styles.article}>{children}</article>
 )
-
-export default Article

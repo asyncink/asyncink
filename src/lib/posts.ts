@@ -1,22 +1,21 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
-import slug from 'remark-slug'
-import highlight from 'remark-highlight.js'
-import unwrapImages from 'remark-unwrap-images'
+import { marked } from 'marked'
+
+import type { PostPreview, Post } from 'types'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
 export function getPostIds(): string[] {
   const fileNames = fs.readdirSync(postsDirectory)
+
   return fileNames.map(fileName => fileName.replace(/\.md$/, ''))
 }
 
-export function getPostItems(): any {
+export function getPostPreviews(): PostPreview[] {
   const fileNames = fs.readdirSync(postsDirectory)
-  const postItems: PostItem[] = fileNames.map(fileName => {
+  const postItems: PostPreview[] = fileNames.map(fileName => {
     const id = fileName.replace(/\.md$/, '')
 
     const fullPath = path.join(postsDirectory, fileName)
@@ -40,27 +39,26 @@ export function getPostItems(): any {
     .sort((a, b) => +new Date(b.date) - +new Date(a.date))
 }
 
-export async function getPost(paramsId: string | string[]): Promise<Post> {
-  const id = Array.isArray(paramsId) ? paramsId[0] : paramsId
+export async function getPost(
+  postId?: string | string[]
+): Promise<Post | null> {
+  if (!postId) {
+    return null
+  }
+
+  const id = Array.isArray(postId) ? postId[0] : postId
 
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   const { data, content } = matter(fileContents)
   const { title, date, tag, description, published } = data
-
-  const processedContent = await remark()
-    .use(slug)
-    .use(highlight, { include: ['js', 'ts', 'html'] })
-    .use(unwrapImages)
-    .use(html, { sanitize: false })
-    .process(content)
-  const contentHtml = processedContent.toString()
+  const html = marked.parse(content)
 
   return {
     id,
     title,
-    contentHtml,
+    html,
     date: String(date),
     tag,
     description,

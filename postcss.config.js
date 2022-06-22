@@ -10,7 +10,7 @@ module.exports = {
         stage: 2,
         features: {
           'nesting-rules': true,
-          'custom-properties': true,
+          'custom-properties': { disableDeprecationNotice: true },
           'custom-media-queries': true
         },
         importFrom: ['src/styles/variables.css']

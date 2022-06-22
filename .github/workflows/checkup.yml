@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: use Node.js
         uses: actions/setup-node@v1
@@ -24,6 +24,10 @@ jobs:
 
       - name: run static types check
         run: yarn typecheck
-      
+
       - name: count lines of code
-        uses: djdefi/cloc-action@main
+        run: |
+          yarn global add cloc
+          cloc src/
+ 
+        

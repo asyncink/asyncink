@@ -1,18 +1,30 @@
-import React, { FC, useCallback } from 'react'
+import React, { useCallback } from 'react'
+
 import { useRouter } from 'next/router'
-import Head from 'next/head'
-import Link from 'components/link'
-import Typography from 'components/typography'
+
+import { Meta } from 'components/meta'
+import { Link } from 'components/link'
+import { H1, H2 } from 'components/typography'
+
+import MustIcon from 'components/icons/must.svg'
 import TelegramIcon from 'components/icons/telegram.svg'
+import RawgIcon from 'components/icons/rawg.svg'
+import GitHubIcon from 'components/icons/github.svg'
+
 import styles from './styles.module.css'
 
 const LOGO = 'Mikhail T. is typing...'
 
-interface Props {
+interface LayoutProps {
   title: string
+  description?: string
 }
 
-const Layout: FC<Props> = ({ children, title }) => {
+export const Layout: React.FC<LayoutProps> = ({
+  children,
+  title,
+  description
+}) => {
   const { pathname } = useRouter()
 
   const handleTelegramClick = useCallback(
@@ -22,48 +34,45 @@ const Layout: FC<Props> = ({ children, title }) => {
 
   return (
     <div className={styles.layout}>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <title>{title}</title>
-        <meta name="description" content={title} />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-      </Head>
       <header>
-        <Typography.H2>
-          {pathname === '/' ? LOGO : <Link href="/">{LOGO}</Link>}
-        </Typography.H2>
-        <Typography.H1>{title}</Typography.H1>
+        <H2>{pathname === '/' ? LOGO : <Link href="/">{LOGO}</Link>}</H2>
+        <H1>{title}</H1>
       </header>
 
       <main>{children}</main>
 
       <footer>
         <a
-          href="https://t.me/asyncink"
+          href="https://rawg.io/@asyncink"
+          target="_blank"
+          rel="nofollow noreferrer">
+          <RawgIcon />
+        </a>
+
+        <a
+          href="https://mustapp.com/@asyncink/watched"
+          target="_blank"
+          rel="nofollow noreferrer">
+          <MustIcon />
+        </a>
+
+        <a
           onClick={handleTelegramClick}
+          href="https://t.me/asyncink"
           target="_blank"
           rel="nofollow noreferrer">
           <TelegramIcon />
         </a>
+
+        <a
+          href="https://github.com/asyncink/asyncink"
+          target="_blank"
+          rel="nofollow noreferrer">
+          <GitHubIcon />
+        </a>
       </footer>
+
+      <Meta title={title} description={description} />
     </div>
   )
 }
-
-export default Layout

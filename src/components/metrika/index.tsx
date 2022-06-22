@@ -1,21 +1,11 @@
-import React, { ReactNode } from 'react'
-import { AppProps } from 'next/app'
-
-import dayjs from 'dayjs'
-import 'dayjs/locale/ru'
+import React from 'react'
 
 import Script from 'next/script'
 
-import 'styles/variables.css'
-import 'styles/global.css'
-
-dayjs.locale('ru')
-
-const App = ({ Component, pageProps }: AppProps): ReactNode => {
-  return (
-    <>
-      <Script strategy="lazyOnload" id="yandex-metrika">
-        {`
+export const Metrika: React.FC = () => (
+  <>
+    <Script strategy="lazyOnload" id="yandex-metrika">
+      {`
           (function (d, w, c) {
             (w[c] = w[c] || []).push(function() {
               try {
@@ -41,19 +31,16 @@ const App = ({ Component, pageProps }: AppProps): ReactNode => {
             } else { f(); }
           })(document, window, "yandex_metrika_callbacks");
         `}
-      </Script>
-      <noscript>
-        <div>
-          <img
-            src="https://mc.yandex.ru/watch/87645946"
-            style={{ position: 'absolute', left: '-9999px' }}
-            alt=""
-          />
-        </div>
-      </noscript>
-      <Component {...pageProps} />
-    </>
-  )
-}
-
-export default App
+    </Script>
+    <noscript>
+      <div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://mc.yandex.ru/watch/87645946"
+          style={{ position: 'absolute', left: '-9999px' }}
+          alt=""
+        />
+      </div>
+    </noscript>
+  </>
+)

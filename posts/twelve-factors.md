@@ -1,8 +1,8 @@
 ---
 title: The Twelve-Factor App. Принципы архитектуры современных веб-приложений
-date: 2022-04-20
+date: 2022-05-01
 tag: read
-description:
+description: The Twelve-Factor App — принципы архитектуры современных веб-приложений от команды Heroku.
 published: true
 ---
 
@@ -28,6 +28,8 @@ The Twelve-Factor App — принципы архитектуры совреме
 1. [Паритет разработки/работы приложения](https://12factor.net/ru/dev-prod-parity). Держите окружения разработки, промежуточного развёртывания (staging) и рабочего развёртывания (production) максимально похожими
 1. [Журналирование (Logs)](https://12factor.net/ru/logs). Рассматривайте журнал как поток событий
 1. [Задачи администрирования](https://12factor.net/ru/admin-processes). Выполняйте задачи администрирования/управления с помощью разовых процессов
+
+---
 
 На основе The Twelve-Factor App в блоге IBM в 2019 году вышла статья [«7 Missing Factors from 12-Factor Applications»](https://www.ibm.com/cloud/blog/7-missing-factors-from-12-factor-applications) ([переведенный](https://habr.com/ru/company/flant/blog/460363/) на Хабре). Авторы предлагают дополнительные 7 принципов, преимущественно в разрезе работы с Kubernetes:
 

@@ -1,17 +1,15 @@
-import React, { FC } from 'react'
-import cn from 'classnames'
+import React from 'react'
+import clsx from 'clsx'
 import styles from './styles.module.css'
 
-interface Props {
+interface TypographyProps {
   className?: string
 }
 
-const H1: FC<Props> = ({ children, className }) => {
-  return <h1 className={cn(styles.h1, className)}>{children}</h1>
+export const H1: React.FC<TypographyProps> = ({ children, className }) => {
+  return <h1 className={clsx(styles.h1, className)}>{children}</h1>
 }
 
-const H2: FC<Props> = ({ children, className }) => {
-  return <h2 className={cn(styles.h2, className)}>{children}</h2>
+export const H2: React.FC<TypographyProps> = ({ children, className }) => {
+  return <h2 className={clsx(styles.h2, className)}>{children}</h2>
 }
-
-export default { H1, H2 }
