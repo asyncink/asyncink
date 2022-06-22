@@ -6,13 +6,11 @@ import { Metrika } from 'components/metrika'
 import 'styles/variables.css'
 import 'styles/global.css'
 
-const App = ({ Component, pageProps }: AppProps): React.ReactNode => {
-  return (
-    <>
-      <Metrika />
-      <Component {...pageProps} />
-    </>
-  )
-}
+const App = ({ Component, pageProps }: AppProps): React.ReactNode => (
+  <React.StrictMode>
+    <Metrika />
+    <Component {...pageProps} />
+  </React.StrictMode>
+)
 
 export default App

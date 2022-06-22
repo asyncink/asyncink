@@ -18,6 +18,7 @@ const LOGO = 'Mikhail T. is typing...'
 interface LayoutProps {
   title: string
   description?: string
+  children: React.ReactNode
 }
 
 export const Layout: React.FC<LayoutProps> = ({

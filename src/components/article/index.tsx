@@ -1,6 +1,10 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-export const Article: React.FC = ({ children }) => (
+interface ArticleProps {
+  children: React.ReactNode
+}
+
+export const Article: React.FC<ArticleProps> = ({ children }: ArticleProps) => (
   <article className={styles.article}>{children}</article>
 )

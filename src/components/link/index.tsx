@@ -4,6 +4,7 @@ import { default as LinkNext } from 'next/link'
 interface LinkProps {
   href: string
   className?: string
+  children: React.ReactNode
 }
 
 export const Link: React.FC<LinkProps> = ({ children, href, ...props }) => (

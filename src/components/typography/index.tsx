@@ -4,6 +4,7 @@ import styles from './styles.module.css'
 
 interface TypographyProps {
   className?: string
+  children: React.ReactNode
 }
 
 export const H1: React.FC<TypographyProps> = ({ children, className }) => {
