@@ -9,6 +9,7 @@ import 'styles/global.css'
 const App = ({ Component, pageProps }: AppProps): React.ReactNode => (
   <React.StrictMode>
     <Metrika />
+
     <Component {...pageProps} />
   </React.StrictMode>
 )

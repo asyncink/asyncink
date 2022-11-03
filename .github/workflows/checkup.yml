@@ -1,10 +1,10 @@
-name: lint, typecheck and test
+name: lint and static typecheck
 
 on: push
 
 jobs:
   checkup:
-    name: lint, typecheck, test
+    name: lint and static typecheck
     runs-on: ubuntu-latest
 
     steps:

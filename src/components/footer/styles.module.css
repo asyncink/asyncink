@@ -1,0 +1,48 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 60px;
+
+  @media (--tablet) {
+    justify-content: center;
+    opacity: 0.8;
+  }
+
+  & > a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 200ms;
+
+    @media (--tablet) {
+      opacity: 0.85;
+    }
+
+    &:hover {
+      @media (--tablet) {
+        opacity: 1;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    & + a {
+      margin-left: 20px;
+    }
+  }
+
+  & svg {
+    height: 20px;
+    width: 20px;
+
+    @media (--tablet) {
+      height: 26px;
+      width: 26px;
+    }
+  }
+}

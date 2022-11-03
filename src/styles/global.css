@@ -48,3 +48,14 @@ img {
   max-width: 100%;
   display: block;
 }
+
+#__next {
+  min-width: 320px;
+  margin: 25px auto 20px;
+  padding: 0 20px;
+
+  @media (--tablet) {
+    margin: 50px auto 30px;
+    padding: 0;
+  }
+}

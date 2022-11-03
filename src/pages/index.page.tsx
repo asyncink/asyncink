@@ -16,7 +16,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   postPreviews
 }): JSX.Element => {
   return (
-    <Layout title="Блог о разработке, дизайне, мышлении и управлении продуктом">
+    <Layout>
       <List items={postPreviews} />
     </Layout>
   )
