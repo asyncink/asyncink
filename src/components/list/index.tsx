@@ -2,8 +2,8 @@ import React, { useMemo } from 'react'
 
 import type { PostPreview } from 'types'
 
+import Link from 'next/link'
 import { PostDate } from 'components/post-date'
-import { Link } from 'components/link'
 import { Tag } from 'components/tag'
 
 import styles from './styles.module.css'

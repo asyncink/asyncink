@@ -1,48 +1,33 @@
 .footer {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 60px;
-
-  @media (--tablet) {
-    justify-content: center;
-    opacity: 0.8;
-  }
+  font-size: 24px;
 
   & > a {
-    width: 40px;
-    height: 40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-right: 20px;
     transition: opacity 200ms;
 
-    @media (--tablet) {
-      opacity: 0.85;
+    &::after {
+      width: 1.5em;
+      height: 1.5em;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
     }
 
-    &:hover {
-      @media (--tablet) {
-        opacity: 1;
+    & > svg {
+      width: 1.08em;
+
+      &.github {
+        width: 1.15em;
       }
-
-      &::after {
-        display: none;
-      }
-    }
-
-    & + a {
-      margin-left: 20px;
-    }
-  }
-
-  & svg {
-    height: 20px;
-    width: 20px;
-
-    @media (--tablet) {
-      height: 26px;
-      width: 26px;
     }
   }
 }

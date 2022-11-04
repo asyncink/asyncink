@@ -15,32 +15,33 @@ body {
 a {
   color: var(--link-color);
   text-decoration: none;
+  padding: 2px;
 
   @media (--tablet) {
     display: inline-block;
     line-height: 21px;
     position: relative;
   }
-}
 
-a::after {
-  @media (--tablet) {
-    content: '';
-    z-index: -1;
-    width: calc(100% + 2px);
-    height: calc(100% + 4px);
-    position: absolute;
-    left: -1px;
-    top: -2px;
-    background-color: var(--link-background);
-    border-radius: 3px;
-    opacity: 0;
+  &::after {
+    @media (--tablet) {
+      content: '';
+      z-index: -1;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      background-color: var(--link-background);
+      border-radius: 3px;
+      opacity: 0;
+    }
   }
-}
 
-a:hover::after {
-  @media (--tablet) {
-    opacity: 1;
+  &:hover::after {
+    @media (--tablet) {
+      opacity: 1;
+    }
   }
 }
 

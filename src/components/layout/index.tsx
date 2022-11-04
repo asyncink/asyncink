@@ -4,6 +4,10 @@ import { Meta } from 'components/meta'
 import { Header } from 'components/header'
 import { Footer } from 'components/footer'
 
+const LAYOUT_LOGO = 'asyncink'
+const LAYOUT_HEADLINE =
+  'Неустаревающие\nстатьи, видео и книги,\nредкие переводы и посты'
+
 interface LayoutProps {
   title?: string
   description?: string
@@ -12,13 +16,13 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({
   children,
-  title = 'Неустаревающие\nстатьи, видео и книги',
+  title = LAYOUT_HEADLINE,
   description
 }) => (
   <>
     <Meta title={title} description={description} />
 
-    <Header title={title} />
+    <Header logo={LAYOUT_LOGO} title={title} />
     <main>{children}</main>
     <Footer />
   </>
